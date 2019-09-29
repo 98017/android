@@ -1,0 +1,35 @@
+Function Countcolor(col As Range, countrange As Range)
+
+Dim icell As Range
+
+Application.Volatile
+
+For Each icell In countrange
+
+If icell.Interior.ColorIndex = col.Interior.ColorIndex Then
+
+Countcolor = Countcolor + 1
+
+End If
+
+Next icell
+
+End Function
+
+Function Sumcolor(col As Range, sumrange As Range)
+
+Dim icell As Range
+
+Application.Volatile
+
+For Each icell In sumrange
+
+If icell.Interior.ColorIndex = col.Interior.ColorIndex Then
+
+Sumcolor = Application.Sum(icell) + Sumcolor
+
+End If
+
+Next icell
+
+End Function
